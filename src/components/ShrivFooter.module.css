@@ -1,0 +1,146 @@
+.footer {
+  position: relative;
+  background-color: #f3f1ea;
+  background-image: linear-gradient(
+      rgba(243, 241, 234, 0.74),
+      rgba(243, 241, 234, 0.86)
+    ),
+    url("../assets/figma/footer-bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-top: 1px solid #e6e3da;
+  padding: 64px 0 28px;
+  color: var(--s-light-body);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--s-maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.5fr 1.3fr;
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e3e9f2;
+}
+
+.brand {
+  font-family: var(--s-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: #17a0a1;
+}
+
+.tagline {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #898b8c;
+}
+
+.colTitle {
+  font-family: "Poppins", var(--s-font);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #111418;
+  margin-bottom: 16px;
+}
+
+.link {
+  display: block;
+  font-family: "Poppins", var(--s-font);
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #17a0a1;
+}
+
+.metaLabel {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--s-light-heading);
+  margin-bottom: 6px;
+}
+
+.followLabel {
+  margin-top: 20px;
+}
+
+.metaText {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--s-light-body);
+  margin-bottom: 16px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: var(--s-light-heading);
+  background: #e7eef7;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social:hover {
+  background: var(--s-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding-top: 22px;
+  font-size: 14px;
+  color: #3a3a3a;
+}
+
+.flag {
+  font-size: 18px;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+  .footer {
+    padding: 48px 0 24px;
+  }
+}

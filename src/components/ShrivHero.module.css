@@ -1,0 +1,628 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 150px 0 90px;
+  background: linear-gradient(
+    146.89deg,
+    #0f172a 6.87%,
+    rgba(30, 41, 59, 0.92) 50%,
+    rgba(51, 65, 85, 0.85) 93.13%
+  );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 5, 50, 0.45);
+  z-index: 0;
+}
+
+.glowTeal,
+.glowIndigo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(180px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glowTeal {
+  width: 760px;
+  height: 520px;
+  right: 60px;
+  top: 300px;
+  background: #06ffea;
+  opacity: 0.4;
+  animation: shrivPulse 9s ease-in-out infinite;
+}
+
+.glowIndigo {
+  width: 700px;
+  height: 700px;
+  left: -220px;
+  top: 280px;
+  background: #3719f0;
+  opacity: 0.4;
+}
+
+.glowBlue {
+  position: absolute;
+  width: 432px;
+  height: 432px;
+  right: 240px;
+  top: 30px;
+  border-radius: 50%;
+  background: rgba(100, 149, 237, 0.18);
+  filter: blur(72px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--s-maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ---------- copy ---------- */
+.copy {
+  max-width: 660px;
+  animation: shrivFadeUp 0.7s ease both;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--s-badge-ink);
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(214, 240, 255, 0.95),
+    rgba(168, 222, 250, 0.9)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 18px rgba(70, 160, 220, 0.25);
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--s-blue-deep);
+  box-shadow: 0 0 8px rgba(17, 53, 120, 0.6);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 24px;
+  font-family: var(--s-font);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--s-light);
+}
+
+.titleLine {
+  font-size: clamp(44px, 5.4vw, 72px);
+  line-height: 0.98;
+  white-space: nowrap;
+}
+
+.titleLine2 {
+  font-size: clamp(40px, 4.8vw, 64px);
+}
+
+.accent {
+  background: linear-gradient(90deg, #2f6df6 0%, #4aa6f0 42%, #5dd9f1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.lead {
+  font-family: var(--s-font-display);
+  font-size: clamp(19px, 1.6vw, 22px);
+  font-weight: 400;
+  line-height: 1.32;
+  color: #fff;
+  margin-bottom: 18px;
+  max-width: 540px;
+}
+
+.sub {
+  font-family: var(--s-font-display);
+  font-size: clamp(16px, 1.35vw, 18px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 30px;
+  max-width: 540px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  font-family: var(--s-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 15px;
+  background: var(--s-cta);
+  box-shadow: var(--s-cta-shadow);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.07);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 28px;
+  font-family: var(--s-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--s-text);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(146, 180, 230, 0.32);
+  transition: background 0.25s ease, border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.secondary:hover {
+  background: rgba(93, 217, 241, 0.1);
+  border-color: var(--s-cyan);
+  transform: translateY(-2px);
+}
+
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+.trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.trust li svg {
+  color: var(--s-cyan-bright);
+}
+
+/* ---------- visual (exact Figma art) ---------- */
+.visual {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visualImg {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  /* feather the rectangular crop edges into the hero background */
+  -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 5%,
+      #000 95%,
+      transparent 100%
+    ),
+    linear-gradient(to bottom, transparent 0, #000 4%, #000 96%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 5%,
+      #000 95%,
+      transparent 100%
+    ),
+    linear-gradient(to bottom, transparent 0, #000 4%, #000 96%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.orb {
+  position: relative;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 46%,
+    rgba(122, 232, 255, 0.22) 0%,
+    rgba(64, 150, 220, 0.18) 38%,
+    rgba(20, 40, 90, 0.5) 62%,
+    rgba(12, 20, 48, 0.2) 78%,
+    transparent 100%
+  );
+  box-shadow: 0 0 140px rgba(30, 160, 200, 0.4),
+    inset 0 0 90px rgba(8, 20, 50, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* dotted halftone sphere */
+.orbDots {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    circle,
+    rgba(150, 235, 255, 0.55) 1.1px,
+    transparent 1.6px
+  );
+  background-size: 13px 13px;
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.55) 38%,
+    #000 60%,
+    #000 73%,
+    transparent 80%
+  );
+  mask-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.55) 38%,
+    #000 60%,
+    #000 73%,
+    transparent 80%
+  );
+  animation: shrivSpin 90s linear infinite;
+}
+
+.orbRing {
+  position: absolute;
+  inset: 3%;
+  border-radius: 50%;
+  border: 1px solid rgba(122, 232, 255, 0.18);
+  box-shadow: 0 0 50px rgba(93, 217, 241, 0.18),
+    inset 0 0 70px rgba(93, 217, 241, 0.1);
+}
+
+/* glassy translucent credit card */
+.card3d {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  height: 188px;
+  border-radius: 18px;
+  padding: 22px;
+  background: linear-gradient(
+    135deg,
+    rgba(140, 220, 245, 0.28) 0%,
+    rgba(70, 120, 180, 0.16) 55%,
+    rgba(120, 200, 235, 0.22) 100%
+  );
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transform: rotate(-2deg);
+  animation: shrivFloat 6s ease-in-out infinite;
+}
+
+.cardChip {
+  width: 44px;
+  height: 32px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(233, 210, 138, 0.9), rgba(184, 146, 63, 0.85));
+  margin-bottom: 30px;
+}
+
+.cardNumber {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--s-font);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  margin-bottom: 18px;
+}
+
+.cardHolder {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.cardHolderSub {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+
+.cardBrand {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  display: flex;
+}
+
+.cardBrand span {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.cardBrand span:last-child {
+  margin-left: -12px;
+  background: rgba(186, 226, 245, 0.32);
+}
+
+/* reward bars (top, fading toward centre) */
+.chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.chipPoints {
+  top: -14px;
+  left: -54px;
+  width: 252px;
+  background: linear-gradient(
+    284deg,
+    rgba(13, 22, 46, 0) 30%,
+    rgba(86, 218, 255, 0.32) 92%
+  ),
+  rgba(10, 18, 40, 0.5);
+  animation: shrivFloat 7s ease-in-out infinite;
+}
+
+.chipReward {
+  top: -28px;
+  right: -54px;
+  width: 252px;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  background: linear-gradient(
+    256deg,
+    rgba(86, 218, 255, 0.32) -10%,
+    rgba(13, 22, 46, 0) 70%
+  ),
+  rgba(10, 18, 40, 0.5);
+  animation: shrivFloat 8s ease-in-out infinite 0.6s;
+}
+
+.chipIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 52px;
+  border-radius: 14px;
+  background: #0a486d;
+  flex-shrink: 0;
+}
+
+.chipValue {
+  font-weight: 700;
+  font-size: 26px;
+  color: #fff;
+  letter-spacing: 0.4px;
+}
+
+.chipLabel {
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.85;
+}
+
+/* flow */
+.flow {
+  position: absolute;
+  bottom: 86px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: shrivFloatSlow 7s ease-in-out infinite;
+}
+
+.flowCard {
+  width: 150px;
+  padding: 14px;
+  border-radius: 15px;
+  background: linear-gradient(108deg, #5d6af6 2%, #060b32 105%);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+}
+
+.flowTag {
+  font-family: "Instrument Sans", var(--s-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--s-text-soft);
+}
+
+.flowBody {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.flowGlyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #15277f;
+  flex-shrink: 0;
+}
+
+.flowText {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--s-text);
+}
+
+.flowArrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--s-cyan-bright);
+  font-size: 18px;
+}
+
+.flowDots {
+  width: 26px;
+  height: 2px;
+  margin-right: 2px;
+  background-image: radial-gradient(circle, var(--s-cyan-bright) 1px, transparent 1px);
+  background-size: 6px 2px;
+}
+
+/* success */
+.success {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 408px;
+  max-width: 92%;
+  padding: 17px;
+  border-radius: 14px;
+  background: rgba(24, 51, 96, 0.85);
+  border: 1px solid #218faf;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.successCheck {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--s-green);
+  flex-shrink: 0;
+}
+
+.successTitle {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.3px;
+  color: #caffdd;
+}
+
+.successSub {
+  font-size: 14px;
+  color: #64efbc;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 980px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .copy {
+    max-width: 640px;
+  }
+  .titleLine {
+    white-space: normal;
+  }
+  .visual {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 120px 0 70px;
+  }
+  .orb {
+    width: 320px;
+    height: 320px;
+  }
+  .card3d {
+    width: 230px;
+    height: 150px;
+    padding: 16px;
+  }
+  .chipPoints {
+    left: -6px;
+    top: 0;
+  }
+  .chipReward {
+    right: -4px;
+  }
+  .flow {
+    bottom: 70px;
+    transform: translateX(-50%) scale(0.86);
+  }
+  .success {
+    width: 280px;
+    transform: translateX(-50%) scale(0.92);
+  }
+}

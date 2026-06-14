@@ -1,0 +1,131 @@
+/* ============================================================
+   Shriv landing — shared theme tokens, base + keyframes.
+   Scoped under .shrivRoot.
+   ============================================================ */
+
+.shrivRoot {
+  /* Palette — calibrated to Figma SHRIV Home-page */
+  --s-navy-900: #0f172a;
+  --s-navy-800: #1e293b;
+  --s-navy-700: #334155;
+  --s-ink: #050a18;
+  --s-card: #0b1326;
+  --s-hero-deep: #090532; /* hero base rectangle */
+  --s-nav-bar: #0e132f;   /* navbar pill bg */
+  --s-cyan: #5dd9f1;
+  --s-cyan-bright: #74fced;
+  --s-cyan-soft: #8aefff;
+  --s-teal: #1ebba9;
+  --s-teal-deep: #00786f; /* benefit/ trust subheads + CTA links */
+  --s-blue: #2563eb;
+  --s-blue-deep: #113578; /* primary heading on light sections */
+  --s-blue-deep-2: #264278; /* how-it-works heading */
+  --s-badge-ink: #192763; /* hero badge text */
+  --s-indigo: #4a46ff;
+  --s-green: #10b981;
+  --s-green-bright: #34d399;
+  --s-green-soft: #64efbc;
+  --s-green-pale: #caffdd;
+
+  /* Text */
+  --s-text: #e2e8f0;
+  --s-text-dim: #94a3b8;
+  --s-text-dim-2: #62748e;
+  --s-text-soft: #c0daff;
+  --s-light: #f1f5f9; /* headings/value text on dark sections */
+
+  /* Light sections */
+  --s-light-bg: #eef3f9;
+  --s-light-card: #ffffff;
+  --s-light-heading: #113578;
+  --s-light-body: #314158;
+  --s-ink-body: #363636; /* how-it-works body */
+
+  --s-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --s-font-display: "Mona Sans", "Inter", system-ui, sans-serif;
+  --s-font-nav: "Maven Pro", "Inter", system-ui, sans-serif;
+  --s-font-instrument: "Instrument Sans", "Inter", sans-serif;
+
+  --s-cta: radial-gradient(
+      65.75% 71.71% at 31.97% 19.67%,
+      rgba(153, 254, 232, 0.7) 0%,
+      rgba(151, 255, 211, 0.21) 50.71%,
+      rgba(150, 255, 203, 0) 69.79%
+    ),
+    linear-gradient(138.58deg, #113578 29.85%, #1ebba9 81.35%);
+  --s-cta-shadow: 4px 24px 44px rgba(0, 0, 0, 0.32),
+    inset -3px -4px 7px rgba(255, 255, 255, 0.15);
+
+  --s-radius: 15px;
+  --s-maxw: 1200px;
+
+  font-family: var(--s-font);
+  color: var(--s-text);
+  background: var(--s-navy-900);
+  position: relative;
+  overflow-x: clip;
+}
+
+.shrivRoot *,
+.shrivRoot *::before,
+.shrivRoot *::after {
+  box-sizing: border-box;
+}
+
+@keyframes shrivFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shrivFloatSlow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.3deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(-0.3deg);
+  }
+}
+
+@keyframes shrivPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes shrivSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shrivFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shrivRoot * {
+    animation: none !important;
+  }
+}
