@@ -57,7 +57,7 @@
   transition: color 0.2s ease;
 }
 
-.link:first-child {
+.link.active {
   color: var(--s-cyan);
 }
 

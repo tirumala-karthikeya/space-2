@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./ShrivNavbar.module.css";
 
 const LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Optimize Rent", href: "#benefits" },
-  { label: "Smart Bills", href: "#benefits" },
-  { label: "Inside SHRIV", href: "#how-it-works" },
-  { label: "Blogs", href: "#blogs" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", to: "/" },
+  { label: "Optimize Rent", to: "/optimize-rent" },
+  { label: "Smart Bills", to: "/#benefits" },
+  { label: "Inside SHRIV", to: "/#how-it-works" },
+  { label: "Blogs", to: "/#blogs" },
+  { label: "Contact Us", to: "/#contact" },
 ];
 
 export default function ShrivNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -21,24 +23,33 @@ export default function ShrivNavbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isActive = (to) => {
+    const base = to.split("#")[0] || "/";
+    return base === pathname && !to.includes("#");
+  };
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.bar}>
-        <a href="#home" className={styles.logo} aria-label="Shriv home">
+        <Link to="/" className={styles.logo} aria-label="Shriv home">
           Shriv
-        </a>
+        </Link>
 
         <nav className={styles.nav} aria-label="Primary">
           {LINKS.map((link) => (
-            <a key={link.label} href={link.href} className={styles.link}>
+            <Link
+              key={link.label}
+              to={link.to}
+              className={`${styles.link} ${isActive(link.to) ? styles.active : ""}`}
+            >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a href="#contact" className={styles.cta}>
+        <Link to="/optimize-rent" className={styles.cta}>
           Get Started <span aria-hidden="true">→</span>
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -55,22 +66,22 @@ export default function ShrivNavbar() {
 
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}>
         {LINKS.map((link) => (
-          <a
+          <Link
             key={link.label}
-            href={link.href}
+            to={link.to}
             className={styles.mobileLink}
             onClick={() => setMenuOpen(false)}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
-        <a
-          href="#contact"
+        <Link
+          to="/optimize-rent"
           className={styles.mobileCta}
           onClick={() => setMenuOpen(false)}
         >
           Get Started →
-        </a>
+        </Link>
       </div>
     </header>
   );

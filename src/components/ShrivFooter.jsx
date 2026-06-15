@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from "./ShrivFooter.module.css";
 
 const COMPANY = [
-  { label: "Optimize Rent", href: "#benefits" },
-  { label: "Smart Bills", href: "#benefits" },
-  { label: "Blogs", href: "#blogs" },
-  { label: "Contact", href: "#contact" },
+  { label: "Optimize Rent", to: "/optimize-rent" },
+  { label: "Smart Bills", to: "/#benefits" },
+  { label: "Blogs", to: "/#blogs" },
+  { label: "Contact", to: "/#contact" },
 ];
 
-const OTHERS = [{ label: "Inside SHRIV", href: "#how-it-works" }];
+const OTHERS = [{ label: "Inside SHRIV", to: "/#how-it-works" }];
 
 const LEGAL = [
   { label: "Terms & Condition", href: "#terms" },
@@ -51,18 +52,18 @@ export default function ShrivFooter() {
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Company</h4>
             {COMPANY.map((l) => (
-              <a key={l.label} href={l.href} className={styles.link}>
+              <Link key={l.label} to={l.to} className={styles.link}>
                 {l.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Others</h4>
             {OTHERS.map((l) => (
-              <a key={l.label} href={l.href} className={styles.link}>
+              <Link key={l.label} to={l.to} className={styles.link}>
                 {l.label}
-              </a>
+              </Link>
             ))}
           </div>
 

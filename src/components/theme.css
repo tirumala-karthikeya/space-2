@@ -45,6 +45,8 @@
   --s-font-display: "Mona Sans", "Inter", system-ui, sans-serif;
   --s-font-nav: "Maven Pro", "Inter", system-ui, sans-serif;
   --s-font-instrument: "Instrument Sans", "Inter", sans-serif;
+  --s-font-mono: "DM Mono", ui-monospace, "SFMono-Regular", monospace;
+  --s-font-dmsans: "DM Sans", "Inter", system-ui, sans-serif;
 
   --s-cta: radial-gradient(
       65.75% 71.71% at 31.97% 19.67%,
