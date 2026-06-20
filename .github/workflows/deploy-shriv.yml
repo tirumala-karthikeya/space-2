@@ -1,0 +1,106 @@
+# Deploy the Shriv website (root-level Vite project) to Zoho Catalyst AppSail via
+# GitHub Actions. Multi-environment, selected by branch:
+#
+#   push to P001-*  -> GitHub Environment "dev"  -> Catalyst dev  project (Development)
+#   push to stable  -> GitHub Environment "qa"   -> Catalyst qa   project (Development)
+#   push to main    -> GitHub Environment "prod" -> Catalyst prod project (Development)
+#   pull request (into stable / main) -> build only (CI), no deploy
+#
+# The CLI deploys to a project's DEVELOPMENT slot only. A push to main lands in the
+# prod project's Development env; customer-live PROD is reached by a manual "Promote"
+# (Dev -> Production) in the Catalyst Console — same shape as stable -> actual QA.
+#
+# Static Vite build served by server.js (Node stack, no Docker). Service name is
+# read from catalyst.json (shriv-landingpage) so it UPDATES the existing service
+# rather than creating a duplicate. The project IS the website, so all paths are
+# repo-root relative (no subfolder).
+#
+# Per-environment config: Settings -> Environments -> dev / qa / prod. Do NOT add
+# required-reviewer protection to dev/qa (it would gate PR builds too). DO add
+# required reviewers on "prod" — it only runs on push to main, so it won't touch CI.
+#   Variables (per env): CATALYST_PROJECT_ID, CATALYST_ORG_ID
+#   Secrets   (per env): CATALYST_TOKEN
+
+name: Deploy Shriv to Catalyst (dev / qa)
+
+on:
+  push:
+    branches:
+      - 'P001-*'
+      - stable
+      - main
+    paths:
+      - '**'
+      - '!**/*.md'
+      - '!**/README*'
+  pull_request:
+    branches: [stable, main]
+    paths:
+      - '**'
+      - '!**/*.md'
+      - '!**/README*'
+  workflow_dispatch: {}
+
+concurrency:
+  group: catalyst-shriv-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build website, deploy AppSail (Node stack)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # main -> "prod"; stable -> "qa"; every P001-* -> "dev".
+    # On pull_request we resolve to '' (no environment) so PRs are pure CI with no
+    # deployment badge.
+    environment: ${{ github.event_name != 'pull_request' && (github.ref_name == 'main' && 'prod' || github.ref_name == 'stable' && 'qa' || 'dev') || '' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      # ---------- CI: build (this validates PRs too) ----------
+      - name: Install deps (incl. vite)
+        run: npm ci
+
+      - name: Build (Vite -> dist/)
+        run: npm run build
+
+      # ===== Deploy-only below — skipped on pull_request (CI only) =====
+
+      # AppSail runs the bundled node_modules as-is. Drop devDeps after the build,
+      # keep only runtime deps (express).
+      - name: Reinstall production-only deps
+        if: github.event_name != 'pull_request'
+        run: |
+          rm -rf node_modules
+          npm ci --omit=dev
+
+      - name: Install zcatalyst-cli
+        if: github.event_name != 'pull_request'
+        run: npm install -g zcatalyst-cli
+
+      - name: Deploy to Catalyst
+        if: github.event_name != 'pull_request'
+        run: |
+          catalyst deploy \
+            --project "${{ vars.CATALYST_PROJECT_ID }}" \
+            --org "${{ vars.CATALYST_ORG_ID }}" \
+            --token "${{ secrets.CATALYST_TOKEN }}" \
+            --dc us \
+            --verbose
+
+      - name: Summary
+        if: success() && github.event_name != 'pull_request'
+        run: |
+          echo "Deployed Shriv website to '${{ github.ref_name }}' environment." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "This deploy landed in the project's Development slot. To go live (QA or PROD)," >> $GITHUB_STEP_SUMMARY
+          echo "Promote Dev -> Production for this project in the Catalyst Console." >> $GITHUB_STEP_SUMMARY

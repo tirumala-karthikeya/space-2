@@ -1,30 +1,22 @@
 import styles from "./Benefits.module.css";
-import imgRentMax from "../assets/figma/benefit-rent-maximization.jpg";
-import imgBillHub from "../assets/figma/benefit-bill-consolidation.jpg";
-import imgCredit from "../assets/figma/benefit-credit-building.jpg";
-import imgAuto from "../assets/figma/benefit-automation.jpg";
+import imgRewards from "../assets/figma/benefit-rent-maximization.png";
+import imgBills from "../assets/figma/benefit-bill-consolidation.png";
+import imgAuto from "../assets/figma/benefit-automation.png";
 
 const CARDS = [
   {
-    image: imgRentMax,
-    title: "Rent Maximization",
-    subtitle: "Turn Your Rent Into Rewards",
-    body: "Your rent is your largest monthly expense. Put it to work. Shriv bridges the gap so you can pay rent with a credit card, effortlessly racking up premium travel miles, points, or cashback on money you already owe.",
+    image: imgRewards,
+    title: "Rent Rewards Unlocked",
+    subtitle: "Same Rent Payment, More Rewards",
+    body: "Rent's leaving your account anyway, might as well get something back. Shriv lets you pay rent with a credit card, turning money you already owe into travel miles, points, or cashback.",
     link: "Claim Your Rewards",
   },
   {
-    image: imgBillHub,
+    image: imgBills,
     title: "Smart Bill Consolidation",
     subtitle: "All Your Bills. One Master Hub.",
-    body: "Stop juggling multiple bills across different payment platforms. Securely centralize your rent, commercial utilities, and major recurring expenses in one clean dashboard. Never lose track of your cash flow again.",
+    body: "Stop juggling platforms. Manage rent, utilities, and recurring expenses in one secure place. Never lose track of your cash flow again.",
     link: "Simplify Bills",
-  },
-  {
-    image: imgCredit,
-    title: "Programmatic Credit Building",
-    subtitle: "Every Payment Builds Your Future",
-    body: "Watch your credit score grow with every payment you were already making. Shriv securely reports your consistent, on-time payment history to major Canadian credit bureaus to help elevate your credit file with every payment you schedule.",
-    link: "Track Credit Impact",
   },
   {
     image: imgAuto,

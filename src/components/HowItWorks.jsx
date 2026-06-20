@@ -3,19 +3,18 @@ import styles from "./HowItWorks.module.css";
 const STEPS = [
   {
     n: 1,
-    title: "Verify Securely",
-    body: "Create your account in under two minutes using our swift, bank-grade identity verification system.",
+    title: "Sign Up Securely",
+    body: "Create your account in under two minutes using our bank-grade verification.",
   },
   {
     n: 2,
     title: "Link & Automate",
-    body: "Link your rewards card, enter your recipient's details, and set your schedule.",
-    note: "A small, transparent platform fee is always shown clearly upfront.",
+    body: "Link your card, add recipient details, and set your schedule. Fees are always shown upfront, no surprises.",
   },
   {
     n: 3,
-    title: "Collect & Build",
-    body: "Your recipient gets a standard direct deposit right on time. They don't even need a Shriv account. You pocket the points.",
+    title: "Collect Points",
+    body: "Your recipient gets paid right on time. They don't even need a Shriv account. You pocket the points.",
   },
 ];
 
@@ -24,7 +23,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.headingPanel}>
-          <h2 className={styles.heading}>Set Up Once. Earn Every Month</h2>
+          <h2 className={styles.heading}>Get Started in Minutes</h2>
           <p className={styles.subheading}>
             No paperwork. No hassle. Up and running in minutes.
           </p>

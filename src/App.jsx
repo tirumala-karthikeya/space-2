@@ -5,6 +5,7 @@ import ShrivNavbar from "./components/ShrivNavbar";
 import ShrivFooter from "./components/ShrivFooter";
 import HomePage from "./pages/HomePage";
 import OptimizeRentPage from "./pages/OptimizeRentPage";
+import CommercialRentPage from "./pages/CommercialRentPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,6 +24,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/optimize-rent" element={<OptimizeRentPage />} />
+          <Route path="/commercial-rent" element={<CommercialRentPage />} />
         </Routes>
       </main>
       <ShrivFooter />

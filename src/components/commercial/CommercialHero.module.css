@@ -1,18 +1,17 @@
 .hero {
   position: relative;
-  background: #0a1f44;
+  background: #0f172a;
   padding: 104px 0 64px;
 }
 
 .inner {
   width: 100%;
-  /* Figma frame is 1440 wide with the card inset ~52px each side (1337px wide) */
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 52px;
 }
 
-/* whole hero card is the banner image (1337 × 632, radius 25 in Figma) */
+/* whole hero card is the banner (1337 × 632) */
 .card {
   position: relative;
   width: 100%;
@@ -21,7 +20,7 @@
   border-radius: 25px;
   overflow: hidden;
   background-color: #cfe0f5;
-  background-image: url("../../assets/figma/op-hero-card.png");
+  background-image: url("../../assets/figma/commercial-hero-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;
@@ -96,7 +95,6 @@
 
 @media (max-width: 720px) {
   .card {
-    /* show the scene below the copy on small screens */
     min-height: 0;
     padding: 40px 28px 240px;
     background-position: center bottom;

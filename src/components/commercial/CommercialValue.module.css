@@ -1,0 +1,163 @@
+.section {
+  background: #f8fafc;
+  padding: 100px 0;
+}
+
+.inner {
+  width: 100%;
+  /* rewards container is 1232; three 397.33 cards + 2×20 gaps = 1232 */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- header ---------- */
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--s-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--s-teal);
+  margin-bottom: 16px;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--s-font);
+  font-weight: 900;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #113578;
+}
+
+/* ---------- top 3 cards ---------- */
+.cardRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.card {
+  min-height: 207px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 24px rgba(17, 53, 120, 0.05);
+}
+
+.cardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 11px;
+  background: #eef4fb;
+  margin-bottom: 18px;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  font-family: var(--s-font);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #113578;
+}
+
+.cardBody {
+  margin: 0;
+  font-family: var(--s-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #62748e;
+}
+
+/* ---------- rewards container ---------- */
+.rewards {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 4px 48px rgba(17, 53, 120, 0.06);
+}
+
+.eyebrowTight {
+  margin-bottom: 10px;
+}
+
+.rewardsTitle {
+  margin: 0 0 6px;
+  font-family: var(--s-font);
+  font-weight: 900;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: #113578;
+}
+
+.rewardsSub {
+  margin: 0 0 36px;
+  font-family: var(--s-font);
+  font-weight: 500;
+  font-size: clamp(18px, 1.9vw, 24px);
+  line-height: 1.3;
+  color: var(--s-teal);
+}
+
+.rewardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.rewardIcon {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.rewardItemTitle {
+  margin: 0 0 8px;
+  font-family: var(--s-font);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.3;
+  color: #113578;
+}
+
+.rewardItemBody {
+  margin: 0;
+  font-family: var(--s-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #62748e;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .section {
+    padding: 70px 0;
+  }
+  .cardRow,
+  .rewardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .rewards {
+    padding: 32px;
+  }
+}

@@ -28,22 +28,18 @@ export default function DualBenefits() {
           <h2 className={styles.heading}>
             The Dual Benefits of Shriv
             <br />
-            <span className={styles.headingGradient}>Rent Payments</span>
+            Rent Payments
           </h2>
-          <p className={styles.subtitle}>
-            The full utility of the Shriv platform — built for renters who play
-            smarter.
-          </p>
         </header>
 
         <div className={styles.grid}>
           {/* CARD 1 — dark */}
           <article className={`${styles.card} ${styles.cardDark}`}>
             <div className={styles.cardTop}>
-              <span className={styles.benefitLabelDark}>Benefit 01</span>
               <span className={styles.iconBadgeDark} aria-hidden="true">
                 ✈️
               </span>
+              <span className={styles.benefitLabelDark}>Benefit 01</span>
             </div>
 
             <h3 className={styles.cardTitleDark}>
@@ -71,22 +67,21 @@ export default function DualBenefits() {
           {/* CARD 2 — white */}
           <article className={`${styles.card} ${styles.cardLight}`}>
             <div className={styles.cardTop}>
-              <span className={styles.benefitLabelLight}>Benefit 02</span>
               <span className={styles.iconBadgeLight} aria-hidden="true">
                 📈
               </span>
+              <span className={styles.benefitLabelLight}>Benefit 02</span>
             </div>
 
             <h3 className={styles.cardTitleLight}>
-              Boost Your
-              <br />
-              Credit Score
+              The Zero Landlord Hassle
+              Guarantee
             </h3>
 
             <p className={styles.cardBodyLight}>
-              Shriv automatically and securely reports your consistent, on-time
-              rent history to Equifax and TransUnion — elevating your credit
-              score passively every month.
+              Your landlord gets paid exactly the way they always have, via a
+              standard bank transfer. No onboarding, no awkward conversations, no
+              fees on their end.
             </p>
 
             <div className={styles.scoreWidget}>

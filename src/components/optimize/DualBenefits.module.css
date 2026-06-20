@@ -9,7 +9,8 @@
 
 .inner {
   width: 100%;
-  max-width: 1200px;
+  /* two 604px cards + 28px gap = 1236 content, + 48px padding */
+  max-width: 1284px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -17,7 +18,7 @@
 /* ---------- Header ---------- */
 .header {
   text-align: center;
-  max-width: 760px;
+  max-width: 1232px;
   margin: 0 auto 64px;
 }
 
@@ -35,10 +36,10 @@
   margin: 0;
   font-family: var(--s-font);
   font-weight: 900;
-  font-size: clamp(34px, 6vw, 62px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--s-blue-deep);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -1px;
+  color: #113578;
 }
 
 .headingGradient {
@@ -68,6 +69,7 @@
 }
 
 .card {
+  min-height: 440px;
   border-radius: 24px;
   padding: 40px;
   display: flex;
@@ -76,8 +78,9 @@
 
 .cardTop {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
   margin-bottom: 28px;
 }
 
@@ -97,13 +100,13 @@
 
 .iconBadgeDark,
 .iconBadgeLight {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -116,7 +119,7 @@
   margin: 0 0 18px;
   font-family: var(--s-font);
   font-weight: 800;
-  font-size: 38px;
+  font-size: 42px;
   line-height: 1.1;
   color: #ffffff;
 }
@@ -134,31 +137,34 @@
   margin-top: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
 .statBox {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 16px 12px;
+  min-height: 204px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   text-align: left;
 }
 
 .statValue {
   font-family: var(--s-font);
   font-weight: 900;
-  font-size: 20px;
+  font-size: 38px;
+  line-height: 1.05;
   color: #ffffff;
 }
 
 .statLabel {
   font-family: var(--s-font-mono);
-  font-size: 10px;
-  line-height: 1.3;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -185,7 +191,7 @@
   margin: 0 0 18px;
   font-family: var(--s-font);
   font-weight: 900;
-  font-size: 38px;
+  font-size: 42px;
   line-height: 1.1;
   color: var(--s-blue-deep);
 }
@@ -202,10 +208,10 @@
 /* ---------- Credit-score widget ---------- */
 .scoreWidget {
   margin-top: auto;
-  background: #f4f7fb;
+  background: #eef4fb;
   border: 1px solid #e3e9f2;
-  border-radius: 18px;
-  padding: 22px;
+  border-radius: 16px;
+  padding: 20px;
 }
 
 .scoreHead {
@@ -326,6 +332,14 @@
 
   .cardTitleDark,
   .cardTitleLight {
-    font-size: 32px;
+    font-size: 34px;
+  }
+
+  .statBox {
+    min-height: 150px;
+  }
+
+  .statValue {
+    font-size: 30px;
   }
 }
