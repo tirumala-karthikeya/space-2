@@ -11,7 +11,7 @@ export default function FinalCta() {
           Already Made the Switch
         </h2>
         <p className={styles.sub}>
-          Every month without Shriv is a month of rewards you'll never get back.
+          Every month without airPe is a month of rewards you'll never get back.
         </p>
         <a href="#contact" className={styles.cta}>
           Start Earning Before Next Rent Day <span aria-hidden="true">→</span>

@@ -8,7 +8,7 @@ const CARDS = [
     image: imgRewards,
     title: "Rent Rewards Unlocked",
     subtitle: "Same Rent Payment, More Rewards",
-    body: "Rent's leaving your account anyway, might as well get something back. Shriv lets you pay rent with a credit card, turning money you already owe into travel miles, points, or cashback.",
+    body: "Rent's leaving your account anyway, might as well get something back. airPe lets you pay rent with a credit card, turning money you already owe into travel miles, points, or cashback.",
     link: "Claim Your Rewards",
   },
   {

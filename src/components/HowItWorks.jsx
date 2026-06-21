@@ -14,7 +14,7 @@ const STEPS = [
   {
     n: 3,
     title: "Collect Points",
-    body: "Your recipient gets paid right on time. They don't even need a Shriv account. You pocket the points.",
+    body: "Your recipient gets paid right on time. They don't even need an airPe account. You pocket the points.",
   },
 ];
 

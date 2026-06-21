@@ -12,8 +12,8 @@ const LINKS = [
       { label: "Commercial Rent", to: "/commercial-rent" },
     ],
   },
-  { label: "Smart Bills", to: "/#benefits" },
-  { label: "Inside SHRIV", to: "/#how-it-works" },
+  { label: "Smart Bills", to: "/smart-bills" },
+  { label: "Inside airPe", to: "/inside-airpe" },
   { label: "Blogs", to: "/#blogs" },
   { label: "Contact Us", to: "/#contact" },
 ];
@@ -60,8 +60,8 @@ export default function ShrivNavbar() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.bar}>
-        <Link to="/" className={styles.logo} aria-label="Shriv home">
-          Shriv
+        <Link to="/" className={styles.logo} aria-label="airPe home">
+          airPe
         </Link>
 
         <nav className={styles.nav} aria-label="Primary">

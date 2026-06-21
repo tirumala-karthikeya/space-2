@@ -1,0 +1,158 @@
+.section {
+  background: #fbf5ee;
+  padding: 100px 0;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 52px;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--s-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--s-teal);
+  margin-bottom: 16px;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--s-font);
+  font-weight: 900;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #113578;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 53, 120, 0.06);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 2px 28px rgba(17, 53, 120, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(17, 53, 120, 0.1);
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cardTitle {
+  margin: 2px 0 10px;
+  font-family: var(--s-font);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.25;
+  color: #113578;
+}
+
+.cardBody {
+  margin: 0 0 18px;
+  font-family: var(--s-font);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #62748e;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-family: var(--s-font-mono);
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 7px;
+}
+
+/* ---- per-tone accents ---- */
+.green .icon {
+  color: #10b981;
+  background: #e6f8f0;
+}
+.green .tag {
+  color: #0f9b6c;
+  background: #ecfaf3;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.blue .icon {
+  color: #2563eb;
+  background: #e8f0fe;
+}
+.blue .tag {
+  color: #2563eb;
+  background: #eef4ff;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+
+.amber .icon {
+  color: #d99423;
+  background: #fcf3e0;
+}
+.amber .tag {
+  color: #c0801a;
+  background: #fdf6e8;
+  border: 1px solid rgba(217, 148, 35, 0.28);
+}
+
+.purple .icon {
+  color: #7c5cff;
+  background: #efeafe;
+}
+.purple .tag {
+  color: #7c5cff;
+  background: #f3effe;
+  border: 1px solid rgba(124, 92, 255, 0.24);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 70px 0;
+  }
+  .inner {
+    padding: 0 24px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

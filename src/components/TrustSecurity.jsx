@@ -38,7 +38,7 @@ const CARDS = [
   {
     icon: "verified",
     title: "Fully Verified & Compliant",
-    body: "Shriv operates in full compliance with financial regulations, so every payment is safe, legal, and always on time.",
+    body: "airPe operates in full compliance with financial regulations, so every payment is safe, legal, and always on time.",
   },
   {
     icon: "shield",

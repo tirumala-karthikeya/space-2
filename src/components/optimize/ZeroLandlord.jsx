@@ -38,7 +38,7 @@ export default function ZeroLandlord() {
           </p>
           <p className={styles.paragraph}>
             You don't need your landlord's permission to start earning on your
-            lease. Shriv handles the conversion instantly in the background so
+            lease. airPe handles the conversion instantly in the background so
             you can pay rent with a credit card Canada wide completely
             hassle-free.
           </p>

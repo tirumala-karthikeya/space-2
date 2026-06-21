@@ -3,12 +3,12 @@ import styles from "./ShrivFooter.module.css";
 
 const COMPANY = [
   { label: "Optimize Rent", to: "/optimize-rent" },
-  { label: "Smart Bills", to: "/#benefits" },
+  { label: "Smart Bills", to: "/smart-bills" },
   { label: "Blogs", to: "/#blogs" },
   { label: "Contact", to: "/#contact" },
 ];
 
-const OTHERS = [{ label: "Inside SHRIV", to: "/#how-it-works" }];
+const OTHERS = [{ label: "Inside airPe", to: "/inside-airpe" }];
 
 const LEGAL = [
   { label: "Terms & Condition", href: "#terms" },
@@ -45,7 +45,7 @@ export default function ShrivFooter() {
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <span className={styles.brand}>SHRIV</span>
+            <span className={styles.brand}>airPe</span>
             <p className={styles.tagline}>Effortless Bill Payments</p>
           </div>
 

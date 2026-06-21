@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  padding: 104px 0 64px;
+  background-color: #070d22;
+  background-image: radial-gradient(
+      48% 60% at 78% 6%,
+      rgba(74, 70, 255, 0.32) 0%,
+      rgba(74, 70, 255, 0) 60%
+    ),
+    radial-gradient(
+      52% 64% at 18% 0%,
+      rgba(30, 187, 169, 0.16) 0%,
+      rgba(30, 187, 169, 0) 58%
+    );
+}
+
+.inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 52px;
+}
+
+/* whole hero card is the banner render */
+.card {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  padding: 104px 60px;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #cfe0f5;
+  background-image: url("../../assets/figma/smartbills-hero-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  width: 680px;
+  max-width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 36px;
+  font-family: var(--s-font);
+  font-weight: 900;
+  font-size: clamp(34px, 4.4vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.titleDark {
+  color: #0b2e6b;
+}
+
+.accent {
+  color: #14b8a6;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 30px;
+  font-family: var(--s-font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 14px;
+  background: var(--s-cta);
+  box-shadow: var(--s-cta-shadow);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.lead {
+  margin: 30px auto 0;
+  max-width: 980px;
+  text-align: center;
+  font-family: var(--s-font-display);
+  font-weight: 400;
+  font-size: clamp(15px, 1.4vw, 19px);
+  line-height: 1.6;
+  color: #c7d6ee;
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    padding: 0 24px;
+  }
+  .card {
+    padding: 72px 40px;
+    min-height: 540px;
+  }
+  .copy {
+    width: 520px;
+  }
+}
+
+@media (max-width: 720px) {
+  .card {
+    min-height: 0;
+    padding: 40px 28px 230px;
+    background-position: center bottom;
+    background-size: 165% auto;
+    text-align: center;
+  }
+  .copy {
+    width: 100%;
+  }
+  .title {
+    align-items: center;
+    white-space: normal;
+  }
+}

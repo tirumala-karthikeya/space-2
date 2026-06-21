@@ -3,16 +3,16 @@ import styles from "./OptimizeFaq.module.css";
 
 const FAQ_ITEMS = [
   {
-    q: "How to pay rent with credit card Canada style using Shriv?",
-    a: "Add your landlord as a payee, link your credit card, and schedule the payment inside Shriv. We charge the card and send a bank transfer or cheque to your landlord, so rent leaves on time every month. You keep your card rewards while your landlord gets paid the way they prefer.",
+    q: "How to pay rent with credit card Canada style using airPe?",
+    a: "Add your landlord as a payee, link your credit card, and schedule the payment inside airPe. We charge the card and send a bank transfer or cheque to your landlord, so rent leaves on time every month. You keep your card rewards while your landlord gets paid the way they prefer.",
   },
   {
     q: "Can you pay rent with a credit card Canada wide if your landlord doesn't accept cards?",
-    a: "Yes. Shriv sits between your card and your landlord, so they never need a card terminal or any account with us. You pay by credit card and we settle directly to their bank account by Interac or EFT. It works for tenants across every province and territory.",
+    a: "Yes. airPe sits between your card and your landlord, so they never need a card terminal or any account with us. You pay by credit card and we settle directly to their bank account by Interac or EFT. It works for tenants across every province and territory.",
   },
   {
     q: "Does this work for clearing credit card welcome bonuses?",
-    a: "Absolutely. Rent is usually your largest recurring expense, which makes it an easy way to hit minimum-spend thresholds on a new card. Route a payment or two through Shriv and you can clear most welcome-bonus requirements without changing your spending habits.",
+    a: "Absolutely. Rent is usually your largest recurring expense, which makes it an easy way to hit minimum-spend thresholds on a new card. Route a payment or two through airPe and you can clear most welcome-bonus requirements without changing your spending habits.",
   },
 ];
 

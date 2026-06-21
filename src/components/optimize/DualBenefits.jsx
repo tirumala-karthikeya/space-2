@@ -24,9 +24,9 @@ export default function DualBenefits() {
     <section id="dual-benefits" className={styles.section}>
       <div className={styles.inner}>
         <header className={styles.header}>
-          <span className={styles.label}>Why Shriv</span>
+          <span className={styles.label}>Why airPe</span>
           <h2 className={styles.heading}>
-            The Dual Benefits of Shriv
+            The Dual Benefits of airPe
             <br />
             Rent Payments
           </h2>
@@ -49,7 +49,7 @@ export default function DualBenefits() {
             </h3>
 
             <p className={styles.cardBodyDark}>
-              Route your lease payment through Shriv to collect maximum travel
+              Route your lease payment through airPe to collect maximum travel
               miles, point multipliers, or pure cash back straight to your
               favourite card.
             </p>

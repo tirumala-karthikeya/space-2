@@ -4,7 +4,7 @@ const FLOW_CARDS = [
   {
     icon: "🌉",
     title: "The Cash Flow Bridge",
-    body: "Got delayed invoices but rent is due? Shriv covers your lease payment now, so you're never stuck waiting on clients to pay your landlord.",
+    body: "Got delayed invoices but rent is due? airPe covers your lease payment now, so you're never stuck waiting on clients to pay your landlord.",
   },
   {
     icon: "👥",
@@ -22,12 +22,12 @@ const REWARDS = [
   {
     icon: "✈️",
     title: "Millions of Points",
-    body: "Commercial rent is a massive expense. Shriv turns it into your biggest recurring asset, unlocking elite travel tiers and cashback.",
+    body: "Commercial rent is a massive expense. airPe turns it into your biggest recurring asset, unlocking elite travel tiers and cashback.",
   },
   {
     icon: "🌍",
     title: "Global Flexibility",
-    body: "It doesn't matter where your corporate card is issued. Shriv accepts domestic, US, and international business cards.",
+    body: "It doesn't matter where your corporate card is issued. airPe accepts domestic, US, and international business cards.",
   },
   {
     icon: "⚙️",

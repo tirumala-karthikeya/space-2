@@ -23,7 +23,7 @@ export default function OptimizeHero() {
         </div>
 
         <p className={styles.lead}>
-          Stop letting your biggest payment go unrewarded. Shriv lets you pay
+          Stop letting your biggest payment go unrewarded. airPe lets you pay
           rent with a credit card across Canada, turning a mandatory expense into
           miles, points, and cashback while your landlord receives a standard
           bank transfer.

@@ -1,0 +1,133 @@
+.section {
+  padding: 96px 0 110px;
+  background: linear-gradient(160deg, #0f5f63 0%, #0e3a55 40%, #0a1b30 100%);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 52px;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 52px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--s-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(213, 233, 240, 0.7);
+  margin-bottom: 18px;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--s-font);
+  font-weight: 900;
+  font-size: clamp(30px, 3.8vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  color: #f1f7fb;
+}
+
+.lead {
+  margin: 0;
+  font-family: var(--s-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #aac6da;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  border-radius: 18px;
+  padding: 28px;
+  background: linear-gradient(180deg, #fbfdff 0%, #eef4fb 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 44px rgba(5, 12, 25, 0.28);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: #1ebba9;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(17, 53, 120, 0.1);
+}
+
+.icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.badge {
+  font-family: var(--s-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #0f9b6c;
+  background: #e7f8ef;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  padding: 5px 11px;
+}
+
+.cardTitle {
+  margin: 0 0 12px;
+  font-family: var(--s-font);
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 1.25;
+  color: #113578;
+}
+
+.cardBody {
+  margin: 0;
+  font-family: var(--s-font);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4a5b73;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 70px 0 80px;
+  }
+  .inner {
+    padding: 0 24px;
+  }
+  .head {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

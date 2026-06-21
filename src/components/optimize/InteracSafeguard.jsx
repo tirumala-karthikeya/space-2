@@ -23,7 +23,7 @@ export default function InteracSafeguard() {
         <div className={styles.panel}>
           <div className={styles.panelLeft}>
             <p className={styles.panelHeadline}>
-              Skip the manual transfers. Shriv converts your credit card payment
+              Skip the manual transfers. airPe converts your credit card payment
               into a standard Interac e-Transfer automatically. Your landlord sees
               a familiar notification; you see a spike in your points balance.
             </p>
