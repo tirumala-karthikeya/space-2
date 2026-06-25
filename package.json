@@ -1,5 +1,5 @@
 {
-  "name": "shriv-landing",
+  "name": "airpe-landing",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -13,7 +13,9 @@
     "express": "^4.22.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.30.4"
+    "react-router-dom": "^6.30.4",
+    "zcatalyst-sdk-node": "^3.4.0",
+    "zeptomail": "^8.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",

@@ -1,0 +1,250 @@
+/* ============================================================
+   Shared styling for airpe legal pages (Privacy / Cookie).
+   Dark airpe hero + light content card, matching theme tokens.
+   ============================================================ */
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--s-light-bg);
+  color: var(--s-light-body);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  width: 100%;
+  padding: 84px 24px 64px;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 80% at 18% 12%, rgba(93, 217, 241, 0.16) 0%, transparent 55%),
+    radial-gradient(55% 75% at 84% 8%, rgba(30, 187, 169, 0.18) 0%, transparent 55%),
+    linear-gradient(180deg, var(--s-hero-deep) 0%, #0b1330 100%);
+  color: #ffffff;
+}
+
+.backButton {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--s-font);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-2px);
+}
+
+.heroInner {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 auto 16px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  color: var(--s-cyan);
+  font-family: var(--s-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(93, 217, 241, 0.1);
+  border: 1px solid rgba(93, 217, 241, 0.22);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--s-font-display);
+  font-size: clamp(2.2rem, 5.8vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.updated {
+  margin: 14px 0 0;
+  color: rgba(226, 232, 240, 0.72);
+  font-size: 0.9rem;
+}
+
+/* ---------- Content ---------- */
+.contentSection {
+  padding: 56px 24px 96px;
+  background: var(--s-light-bg);
+}
+
+.content {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 52px;
+  border-radius: 28px;
+  background: var(--s-light-card);
+  border: 1px solid #e3e9f2;
+  box-shadow: 0 24px 60px -28px rgba(17, 53, 120, 0.22);
+}
+
+.introSection {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(17, 53, 120, 0.08);
+}
+
+.policySection {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(17, 53, 120, 0.08);
+}
+
+.policySection:last-of-type {
+  border-bottom: none;
+}
+
+.policySection h2,
+.contactBox h2 {
+  margin: 0 0 14px;
+  font-family: var(--s-font-display);
+  font-size: 1.38rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--s-light-heading);
+}
+
+.introSection p,
+.policySection p,
+.contactBox p {
+  margin: 0 0 16px;
+  color: var(--s-light-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.policyList {
+  margin: 0 0 16px;
+  padding-left: 24px;
+  color: var(--s-light-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  list-style-type: disc;
+  overflow-wrap: break-word;
+}
+
+.policyList li {
+  margin-bottom: 8px;
+}
+
+.policyList li:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Contact box ---------- */
+.contactBox {
+  margin-top: 18px;
+  padding: 26px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(30, 187, 169, 0.12) 0%, transparent 36%),
+    rgba(17, 53, 120, 0.05);
+  border: 1px solid rgba(17, 53, 120, 0.12);
+}
+
+.contactMethods {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 2px 0 18px;
+}
+
+.contactLink {
+  color: var(--s-teal-deep);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.orSep {
+  color: var(--s-text-dim-2);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.address {
+  margin-bottom: 0 !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .hero {
+    padding: 72px 18px 48px;
+  }
+
+  .backButton {
+    top: 16px;
+    left: 14px;
+    padding: 6px 12px;
+    font-size: 0.74rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 8vw, 2.2rem);
+  }
+
+  .contentSection {
+    padding: 36px 16px 64px;
+  }
+
+  .content {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .policySection,
+  .introSection {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+
+  .policySection h2,
+  .contactBox h2 {
+    font-size: 1.12rem;
+  }
+
+  .introSection p,
+  .policySection p,
+  .contactBox p,
+  .policyList {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .contactBox {
+    padding: 20px;
+    border-radius: 16px;
+  }
+}

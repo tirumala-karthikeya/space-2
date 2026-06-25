@@ -1,0 +1,56 @@
+/* ============================================================
+   RaiseComplaint — full-page dark backdrop hosting the request form.
+   ============================================================ */
+
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 96px 24px 110px;
+  background:
+    radial-gradient(60% 60% at 16% 8%, rgba(93, 217, 241, 0.14) 0%, transparent 55%),
+    radial-gradient(55% 60% at 86% 92%, rgba(30, 187, 169, 0.18) 0%, transparent 55%),
+    linear-gradient(180deg, var(--s-hero-deep) 0%, #0b1330 60%, #090f24 100%);
+}
+
+.contentContainer {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--s-font);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(-2px);
+}
+
+.backIcon {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .pageWrapper {
+    padding: 80px 16px 72px;
+  }
+
+  .backBtn {
+    margin-bottom: 20px;
+  }
+}

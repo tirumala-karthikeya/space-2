@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./ShrivNavbar.module.css";
+import styles from "./AirpeNavbar.module.css";
 
 const LINKS = [
   { label: "Home", to: "/" },
@@ -37,7 +37,7 @@ const Caret = () => (
   </svg>
 );
 
-export default function ShrivNavbar() {
+export default function AirpeNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();

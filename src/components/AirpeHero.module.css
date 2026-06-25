@@ -1,0 +1,321 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 168px 0 96px;
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(37, 99, 235, 0.18) 0%, transparent 55%),
+    linear-gradient(168deg, #0b1226 0%, #0f172a 42%, #131d33 100%);
+}
+
+/* ---------- ambient depth glows ---------- */
+.glowTeal,
+.glowIndigo,
+.glowBlue {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.glowTeal {
+  width: 520px;
+  height: 520px;
+  left: -120px;
+  bottom: -140px;
+  background: rgba(30, 187, 169, 0.16);
+  filter: blur(110px);
+}
+
+.glowIndigo {
+  width: 460px;
+  height: 460px;
+  left: 46%;
+  top: -180px;
+  transform: translateX(-50%);
+  background: rgba(74, 70, 255, 0.16);
+  filter: blur(120px);
+}
+
+.glowBlue {
+  width: 432px;
+  height: 432px;
+  right: -80px;
+  top: 40px;
+  background: rgba(100, 149, 237, 0.14);
+  filter: blur(90px);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: airpeFadeUp 0.7s ease both;
+}
+
+/* ---------- title ---------- */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 44px;
+  font-family: var(--s-font);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+}
+
+.titleWhite {
+  font-size: clamp(34px, 5.4vw, 64px);
+  color: #f8fafc;
+}
+
+.titleAccent {
+  font-size: clamp(34px, 5.4vw, 64px);
+  background: linear-gradient(
+    90deg,
+    #60a5fa 22%,
+    #4087f7 44%,
+    #299cd6 56%,
+    #15d8d9 68%,
+    #1ebba9 78%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ---------- in-card CTA ---------- */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 255px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  font-family: var(--s-font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.97);
+  border-radius: 14px;
+  background: var(--s-cta);
+  box-shadow: var(--s-cta-shadow);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.07);
+}
+
+/* ---------- glass flow card ---------- */
+.flowCard {
+  position: relative;
+  width: 100%;
+  max-width: 1040px;
+  padding: 52px 48px 44px;
+  border-radius: 26px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.5) 0%,
+    rgba(15, 23, 42, 0.3) 55%,
+    rgba(51, 65, 85, 0.36) 100%
+  );
+  border: 1px solid rgba(148, 180, 230, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.steps {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+}
+
+.stepGroup {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+}
+
+.iconWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  margin-bottom: 22px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.38),
+    inset 0 2px 4px rgba(255, 255, 255, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* soft ring around each icon */
+.iconWrap::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step:hover .iconWrap {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.iconImg {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.pay {
+  background: radial-gradient(circle at 38% 32%, #cfe6ff 0%, #a9d2fb 70%);
+}
+.bank {
+  background: radial-gradient(circle at 38% 32%, #3ec77a 0%, #1f9d57 75%);
+}
+.reward {
+  background: radial-gradient(circle at 38% 32%, #e6dafc 0%, #cbb6f7 72%);
+}
+
+.stepLabel {
+  font-family: var(--s-font);
+  font-weight: 800;
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.1;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.payLabel {
+  color: #8dc9ff;
+}
+.bankLabel {
+  color: #a4ffcd;
+}
+.rewardLabel {
+  color: #dbc3ff;
+}
+
+.stepSub {
+  font-family: var(--s-font);
+  font-weight: 600;
+  font-size: clamp(14px, 1.3vw, 17px);
+  line-height: 1.2;
+  color: #cbd5e1;
+}
+
+.arrow {
+  flex-shrink: 0;
+  margin-top: 46px;
+}
+
+.flowNote {
+  font-family: var(--s-font-display);
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 17px);
+  line-height: 1.4;
+  color: #cbd5e1;
+  margin: 40px auto 26px;
+  max-width: 640px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 920px) {
+  /* Content is taller than the viewport once steps stack, so top-align it —
+     centering would slide the title up under the fixed navbar. */
+  .hero {
+    align-items: flex-start;
+    min-height: auto;
+  }
+  .steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .stepGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .arrow {
+    margin-top: 0;
+    transform: rotate(90deg) scale(0.7);
+  }
+  .step {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 118px 0 64px;
+  }
+  .cta {
+    width: 100%;
+    max-width: 320px;
+  }
+  .flowCard {
+    padding: 30px 20px 28px;
+  }
+  .steps {
+    gap: 6px;
+  }
+  .stepGroup {
+    gap: 6px;
+  }
+  .iconWrap {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+  .iconWrap svg {
+    width: 60px;
+    height: 60px;
+  }
+  .stepLabel {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  .stepSub {
+    font-size: 15px;
+  }
+  .arrow {
+    transform: rotate(90deg) scale(0.58);
+    margin: -6px 0;
+  }
+  .flowNote {
+    margin: 26px auto 22px;
+    font-size: 15px;
+  }
+}

@@ -1,4 +1,4 @@
-# Deploy the Shriv website (root-level Vite project) to Zoho Catalyst AppSail via
+# Deploy the airpe website (root-level Vite project) to Zoho Catalyst AppSail via
 # GitHub Actions. Multi-environment, selected by branch:
 #
 #   push to P001-*  -> GitHub Environment "dev"  -> Catalyst dev  project (Development)
@@ -11,7 +11,7 @@
 # (Dev -> Production) in the Catalyst Console — same shape as stable -> actual QA.
 #
 # Static Vite build served by server.js (Node stack, no Docker). Service name is
-# read from catalyst.json (shriv-landingpage) so it UPDATES the existing service
+# read from catalyst.json (airpe-landingpage) so it UPDATES the existing service
 # rather than creating a duplicate. The project IS the website, so all paths are
 # repo-root relative (no subfolder).
 #
@@ -21,7 +21,7 @@
 #   Variables (per env): CATALYST_PROJECT_ID, CATALYST_ORG_ID
 #   Secrets   (per env): CATALYST_TOKEN
 
-name: Deploy Shriv to Catalyst (dev / qa)
+name: Deploy airpe to Catalyst (dev / qa)
 
 on:
   push:
@@ -42,7 +42,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: catalyst-shriv-${{ github.ref_name }}
+  group: catalyst-airpe-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
@@ -100,7 +100,7 @@ jobs:
       - name: Summary
         if: success() && github.event_name != 'pull_request'
         run: |
-          echo "Deployed Shriv website to '${{ github.ref_name }}' environment." >> $GITHUB_STEP_SUMMARY
+          echo "Deployed airpe website to '${{ github.ref_name }}' environment." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "This deploy landed in the project's Development slot. To go live (QA or PROD)," >> $GITHUB_STEP_SUMMARY
           echo "Promote Dev -> Production for this project in the Catalyst Console." >> $GITHUB_STEP_SUMMARY

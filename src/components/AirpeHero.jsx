@@ -1,4 +1,4 @@
-import styles from "./ShrivHero.module.css";
+import styles from "./AirpeHero.module.css";
 
 /* ------------------------------------------------------------------
    3-step icons.
@@ -94,10 +94,9 @@ const STEPS = [
   { Icon: RewardIcon, tint: "reward", label: "Reward Points", sub: "Earned" },
 ];
 
-export default function ShrivHero() {
+export default function AirpeHero() {
   return (
     <section id="home" className={styles.hero}>
-      <div className={styles.overlay} aria-hidden="true" />
       <div className={styles.glowTeal} aria-hidden="true" />
       <div className={styles.glowIndigo} aria-hidden="true" />
       <div className={styles.glowBlue} aria-hidden="true" />

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./ShrivFooter.module.css";
+import styles from "./AirpeFooter.module.css";
 
 const COMPANY = [
   { label: "Optimize Rent", to: "/optimize-rent" },
@@ -13,7 +13,8 @@ const OTHERS = [{ label: "Inside airPe", to: "/inside-airpe" }];
 const LEGAL = [
   { label: "Terms & Condition", href: "#terms" },
   { label: "Disclaimer", href: "#disclaimer" },
-  { label: "Privacy Policy", href: "#privacy" },
+  { label: "Privacy Policy", to: "/privacy-policy" },
+  { label: "Cookie Policy", to: "/cookie-policy" },
 ];
 
 const SOCIALS = [
@@ -39,9 +40,9 @@ const SOCIALS = [
   },
 ];
 
-export default function ShrivFooter() {
+export default function AirpeFooter() {
   return (
-    <footer id="contact" className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brandCol}>
@@ -88,11 +89,17 @@ export default function ShrivFooter() {
 
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Legal</h4>
-            {LEGAL.map((l) => (
-              <a key={l.label} href={l.href} className={styles.link}>
-                {l.label}
-              </a>
-            ))}
+            {LEGAL.map((l) =>
+              l.to ? (
+                <Link key={l.label} to={l.to} className={styles.link}>
+                  {l.label}
+                </Link>
+              ) : (
+                <a key={l.label} href={l.href} className={styles.link}>
+                  {l.label}
+                </a>
+              )
+            )}
             <p className={`${styles.metaLabel} ${styles.followLabel}`}>Follow Us on:</p>
             <div className={styles.socials}>
               {SOCIALS.map((s) => (

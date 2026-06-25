@@ -1,10 +1,10 @@
 /* ============================================================
-   Shriv landing — shared theme tokens, base + keyframes.
-   Scoped under .shrivRoot.
+   airpe landing — shared theme tokens, base + keyframes.
+   Scoped under .airpeRoot.
    ============================================================ */
 
-.shrivRoot {
-  /* Palette — calibrated to Figma SHRIV Home-page */
+.airpeRoot {
+  /* Palette — calibrated to Figma airpe Home-page */
   --s-navy-900: #0f172a;
   --s-navy-800: #1e293b;
   --s-navy-700: #334155;
@@ -68,13 +68,13 @@
   overflow-x: clip;
 }
 
-.shrivRoot *,
-.shrivRoot *::before,
-.shrivRoot *::after {
+.airpeRoot *,
+.airpeRoot *::before,
+.airpeRoot *::after {
   box-sizing: border-box;
 }
 
-@keyframes shrivFloat {
+@keyframes airpeFloat {
   0%,
   100% {
     transform: translateY(0);
@@ -84,7 +84,7 @@
   }
 }
 
-@keyframes shrivFloatSlow {
+@keyframes airpeFloatSlow {
   0%,
   100% {
     transform: translateY(0) rotate(-0.3deg);
@@ -94,7 +94,7 @@
   }
 }
 
-@keyframes shrivPulse {
+@keyframes airpePulse {
   0%,
   100% {
     opacity: 0.55;
@@ -106,7 +106,7 @@
   }
 }
 
-@keyframes shrivSpin {
+@keyframes airpeSpin {
   from {
     transform: rotate(0deg);
   }
@@ -115,7 +115,7 @@
   }
 }
 
-@keyframes shrivFadeUp {
+@keyframes airpeFadeUp {
   from {
     opacity: 0;
     transform: translateY(26px);
@@ -127,7 +127,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shrivRoot * {
+  .airpeRoot * {
     animation: none !important;
   }
 }

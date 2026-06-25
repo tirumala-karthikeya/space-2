@@ -3,5 +3,9 @@ dist
 .DS_Store
 *.local
 
+# Secrets / Catalyst CLI link — never commit
+.env
+.catalystrc
+
 # Figma scratch/working dir (renders, scripts, tokens) — never commit
 .figma/

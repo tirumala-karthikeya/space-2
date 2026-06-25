@@ -141,6 +141,7 @@
 }
 
 .statBox {
+  min-width: 0;
   min-height: 204px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -341,5 +342,28 @@
 
   .statValue {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 24px;
+  }
+
+  .statRow {
+    gap: 10px;
+  }
+
+  .statBox {
+    min-height: 120px;
+    padding: 12px;
+  }
+
+  .statValue {
+    font-size: 24px;
+  }
+
+  .statLabel {
+    font-size: 10px;
   }
 }

@@ -1,0 +1,299 @@
+/* ============================================================
+   ComplaintForm — glass card used inside the RaiseComplaint page.
+   ============================================================ */
+
+.section {
+  width: 100%;
+}
+
+.inner {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(11, 19, 38, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.7);
+}
+
+.headerBlock {
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 14px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(93, 217, 241, 0.24);
+  border-radius: 999px;
+  background: rgba(93, 217, 241, 0.1);
+  color: var(--s-cyan);
+  font-family: var(--s-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--s-font-display);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.subheading {
+  margin: 16px auto 0;
+  max-width: 560px;
+  color: var(--s-text-dim);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.errorBox {
+  padding: 13px 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 196, 196, 0.36);
+  border-radius: 10px;
+  background: rgba(120, 24, 40, 0.32);
+  color: #ffd9d9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  color: var(--s-text-soft);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-family: var(--s-font);
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--s-text-dim);
+}
+
+.input:focus {
+  border-color: rgba(93, 217, 241, 0.55);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 3px rgba(93, 217, 241, 0.18);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.textarea {
+  min-height: 110px;
+  padding: 12px 14px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--s-cyan) 50%),
+    linear-gradient(135deg, var(--s-cyan) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.select option {
+  color: #0f172a;
+}
+
+.checkWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.checkWrap input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  flex: 0 0 16px;
+  accent-color: var(--s-teal);
+  cursor: pointer;
+}
+
+.checkText {
+  color: var(--s-text-soft);
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.checkLink {
+  color: var(--s-cyan);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.checkLink:hover {
+  color: var(--s-cyan-bright);
+}
+
+.submitWrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+}
+
+.submitBtn {
+  min-width: 220px;
+  height: 50px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--s-font);
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  background: var(--s-cta);
+  box-shadow: var(--s-cta-shadow);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.submitBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+/* ---------- Success ---------- */
+.successMsg {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.successIcon {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--s-cta);
+  box-shadow: var(--s-cta-shadow);
+  animation: successPop 0.48s ease-out both;
+}
+
+.successText {
+  margin: 0 0 6px;
+  color: var(--s-text-dim);
+  font-size: 1rem;
+}
+
+.successText strong {
+  color: var(--s-cyan);
+}
+
+@keyframes successPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.84) translateY(8px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .inner {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form {
+    gap: 16px;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .successIcon {
+    animation: none;
+  }
+}

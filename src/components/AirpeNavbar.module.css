@@ -7,53 +7,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 12px 15px;
   transition: padding 0.3s ease;
+}
+
+.scrolled.header {
+  padding: 8px 15px;
 }
 
 .bar {
   width: 100%;
   max-width: 1410px;
-  height: 67px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 26px;
-  border-radius: 25px;
-  background: rgba(14, 19, 47, 0.82);
-  border: 1px solid rgba(146, 180, 230, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  background: rgba(14, 19, 47, 0.88);
+  border: 1px solid rgba(146, 180, 230, 0.14);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
   transition: background 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease, border-radius 0.3s ease;
 }
 
 .scrolled .bar {
-  background: rgba(8, 13, 30, 0.9);
-  border-color: rgba(146, 180, 230, 0.22);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(8, 13, 30, 0.94);
+  border-color: rgba(146, 180, 230, 0.24);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
   font-family: var(--s-font-display);
   font-weight: 700;
-  font-size: 26px;
+  font-size: 32px;
   line-height: 1;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.45px;
   color: var(--s-cyan);
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 32px;
 }
 
 .link {
   font-family: var(--s-font-nav);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: -0.3px;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.31px;
   color: #fff;
   transition: color 0.2s ease;
 }
@@ -145,11 +150,11 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0 22px;
-  height: 42px;
+  padding: 0 25px;
+  height: 44px;
   font-family: var(--s-font-display);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
   border-radius: 15px;
   background: var(--s-cta);
